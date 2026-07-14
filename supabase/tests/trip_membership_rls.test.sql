@@ -1,0 +1,14 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+select plan(9);
+select has_table('public', 'trips', 'trips exists');
+select has_table('public', 'trip_members', 'trip membership exists');
+select policies_are('public', 'trips', array['trips members read','trips owner delete','trips owner insert','trips owner update'], 'trips policies are present');
+select policies_are('public', 'profiles', array['profiles insert own','profiles read own','profiles update own'], 'profile policies are present');
+select policies_are('public', 'party_members', array['party members edit','party members read'], 'party member policies are present');
+select policies_are('public', 'stays', array['stays edit','stays read'], 'stay policies are present');
+select policies_are('public', 'days', array['days edit','days read'], 'day policies are present');
+select policies_are('public', 'events', array['events edit','events read scoped'], 'event policies are present');
+select ok((select relrowsecurity from pg_class where oid = 'public.trips'::regclass), 'trips has RLS enabled');
+select * from finish();
+rollback;
