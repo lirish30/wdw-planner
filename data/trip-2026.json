@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "id": "trip-wdw-2026-09",
+  "name": "Orlando + Walt Disney World 2026",
+  "timezone": "America/New_York",
+  "startDate": "2026-09-16",
+  "endDate": "2026-09-26",
+  "source": {
+    "type": "csv",
+    "fileName": "Disney WDW 2026 - 2026 L _ K _ H.csv",
+    "importedAt": "2026-07-13",
+    "notes": "Normalized from spreadsheet rows for stay, park, meals, nap, flights, Lightning Lane wishes, tickets, dining plan, and grandparents' lodging."
+  },
+  "party": {
+    "adults": 2,
+    "childrenAges3To9": 1,
+    "infantsUnder3": 0,
+    "notes": [
+      "The source describes the child as both a toddler and dining-plan age 3-9; confirm exact age and height before attraction validation.",
+      "Grandparents overlap September 22-25 but are not included in the primary room dining-plan totals."
+    ]
+  },
+  "lodging": [
+    {
+      "id": "stay-family-2026-09-16",
+      "name": "Katelynn / Cam",
+      "type": "family-home",
+      "checkInDate": "2026-09-16",
+      "checkOutDate": "2026-09-19",
+      "status": "planned"
+    },
+    {
+      "id": "stay-poly-2026-09-19",
+      "name": "Island Tower at Disney's Polynesian Villas & Bungalows",
+      "sourceText": "Disney Polynesian Tower",
+      "roomType": "Tower - 1 Bedroom Villa",
+      "type": "dvc-deluxe-villa",
+      "checkInDate": "2026-09-19",
+      "checkOutDate": "2026-09-26",
+      "roomReadyTime": "16:00",
+      "status": "booked"
+    }
+  ],
+  "grandparents": [
+    {
+      "date": "2026-09-22",
+      "status": "arriving",
+      "lodging": "Disney's Riviera Resort"
+    },
+    {
+      "date": "2026-09-23",
+      "status": "staying",
+      "lodging": "Disney's Riviera Resort"
+    },
+    {
+      "date": "2026-09-24",
+      "status": "staying",
+      "lodging": "Disney's Beach Club Resort"
+    },
+    {
+      "date": "2026-09-25",
+      "status": "staying",
+      "lodging": "Disney's Beach Club Resort"
+    }
+  ],
+  "transport": [
+    {
+      "id": "flight-pdx-mco-2026-09-16",
+      "type": "flight",
+      "carrier": "Alaska Airlines",
+      "confirmationCode": "HHMSGP",
+      "date": "2026-09-16",
+      "origin": "PDX",
+      "destination": "MCO",
+      "departLocal": "2026-09-16T07:18:00-07:00",
+      "arriveLocal": "2026-09-16T16:10:00-04:00",
+      "status": "booked"
+    },
+    {
+      "id": "flight-mco-pdx-2026-09-26",
+      "type": "flight",
+      "carrier": "Alaska Airlines",
+      "flightNumber": "AS301",
+      "date": "2026-09-26",
+      "origin": "MCO",
+      "destination": "PDX",
+      "departLocal": "2026-09-26T17:13:00-04:00",
+      "arriveLocal": "2026-09-26T20:12:00-07:00",
+      "status": "booked"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "ticket-epic-2026-09-17",
+      "provider": "Universal Orlando Resort",
+      "product": "1-day Epic Universe admission",
+      "date": "2026-09-17",
+      "status": "needs-booking"
+    },
+    {
+      "id": "ticket-wdw-6-day-hopper",
+      "provider": "Walt Disney World Resort",
+      "product": "6-Day Park Hopper",
+      "validFrom": "2026-09-20",
+      "validTo": "2026-09-26",
+      "status": "booked"
+    }
+  ],
+  "diningPlan": {
+    "name": "Disney Dining Plan",
+    "validFrom": "2026-09-19",
+    "validThrough": "2026-09-26T23:59:59-04:00",
+    "nights": 7,
+    "participants": 3,
+    "perPerson": {
+      "quickServiceMeals": 7,
+      "tableServiceMeals": 7,
+      "snacks": 7,
+      "refillableMugs": 1
+    },
+    "partyTotals": {
+      "quickServiceMeals": 21,
+      "tableServiceMeals": 21,
+      "snacks": 21,
+      "refillableMugs": 3
+    },
+    "status": "planned",
+    "verifiedAt": "2026-07-13",
+    "sourceUrl": "https://disneyworld.disney.go.com/en_CA/dining/dining-plan-guide/"
+  },
+  "bookingWindows": [
+    {
+      "id": "window-adr-2026-07-21",
+      "type": "dining-reservations",
+      "date": "2026-07-21",
+      "time": null,
+      "timezone": "America/New_York",
+      "status": "upcoming",
+      "notes": "60 days before Resort arrival; length-of-stay booking applies up to 10 nights. Verify the live opening time before the date."
+    },
+    {
+      "id": "window-ll-2026-09-12",
+      "type": "lightning-lane-purchase",
+      "date": "2026-09-12",
+      "time": "07:00",
+      "timezone": "America/New_York",
+      "status": "upcoming",
+      "notes": "Seven days before Resort check-in, equivalent to 4:00 AM America/Los_Angeles."
+    }
+  ],
+  "days": [
+    {
+      "id": "day-2026-09-16",
+      "date": "2026-09-16",
+      "title": "Fly to Orlando",
+      "location": "Katelynn / Cam",
+      "parks": [],
+      "events": [
+        {
+          "id": "event-pdx-depart",
+          "type": "flight",
+          "startTime": "07:18",
+          "title": "Depart PDX",
+          "status": "booked"
+        },
+        {
+          "id": "event-mco-arrive",
+          "type": "flight",
+          "startTime": "16:10",
+          "title": "Arrive MCO",
+          "status": "booked"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-17",
+      "date": "2026-09-17",
+      "title": "Epic Universe",
+      "location": "Katelynn / Cam",
+      "parks": ["Universal Epic Universe"],
+      "events": [
+        {
+          "id": "event-epic-potter",
+          "type": "land",
+          "startTime": null,
+          "title": "The Wizarding World of Harry Potter - Ministry of Magic",
+          "status": "planned"
+        },
+        {
+          "id": "event-epic-mario",
+          "type": "land",
+          "startTime": null,
+          "title": "SUPER NINTENDO WORLD",
+          "status": "planned"
+        },
+        {
+          "id": "event-nap-family-0917",
+          "type": "nap",
+          "startTime": "12:00",
+          "endTime": "14:00",
+          "title": "Nap at Katelynn / Cam",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-18",
+      "date": "2026-09-18",
+      "title": "Family day",
+      "location": "Katelynn / Cam",
+      "parks": [],
+      "events": [
+        {
+          "id": "event-nap-family-0918",
+          "type": "nap",
+          "startTime": "12:00",
+          "endTime": "14:00",
+          "title": "Nap at Katelynn / Cam",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-19",
+      "date": "2026-09-19",
+      "title": "Move to the Polynesian",
+      "location": "Island Tower",
+      "parks": [],
+      "events": [
+        {
+          "id": "event-poly-bags",
+          "type": "lodging",
+          "startTime": "11:00",
+          "title": "Drop luggage at the Polynesian",
+          "status": "planned"
+        },
+        {
+          "id": "event-water-park",
+          "type": "activity",
+          "startTime": "12:00",
+          "endTime": "15:00",
+          "title": "Water park",
+          "status": "planned",
+          "validationStatus": "conflict"
+        },
+        {
+          "id": "event-poly-checkin",
+          "type": "lodging",
+          "startTime": "16:00",
+          "title": "Villa room-ready target",
+          "status": "booked"
+        },
+        {
+          "id": "meal-ohana-dinner",
+          "type": "meal",
+          "meal": "dinner",
+          "startTime": null,
+          "title": "'Ohana dinner",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 1
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-20",
+      "date": "2026-09-20",
+      "title": "Magic Kingdom + Hollywood Studios",
+      "location": "Island Tower",
+      "parks": ["Magic Kingdom", "Disney's Hollywood Studios"],
+      "events": [
+        {
+          "id": "meal-0920-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "Wailulu breakfast or Capt. Cook's",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "park-0920-mk",
+          "type": "park",
+          "startTime": null,
+          "title": "Magic Kingdom - morning",
+          "status": "planned"
+        },
+        {
+          "id": "meal-0920-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Columbia Harbour House",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "nap-0920",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        },
+        {
+          "id": "park-0920-hs",
+          "type": "park",
+          "startTime": null,
+          "title": "Hollywood Studios - evening",
+          "status": "planned"
+        },
+        {
+          "id": "meal-0920-dinner",
+          "type": "meal",
+          "meal": "dinner",
+          "startTime": null,
+          "title": "Sci-Fi Dine-In Fantasmic! Dining Package",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 1
+        }
+      ],
+      "lightningLane": [
+        {
+          "attraction": "Seven Dwarfs Mine Train",
+          "park": "Magic Kingdom",
+          "passType": "single",
+          "group": null,
+          "priority": "high"
+        },
+        {
+          "attraction": "The Barnstormer",
+          "park": "Magic Kingdom",
+          "passType": "multi",
+          "group": 2,
+          "priority": "high"
+        },
+        {
+          "attraction": "Haunted Mansion",
+          "park": "Magic Kingdom",
+          "passType": "multi",
+          "group": 2,
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-21",
+      "date": "2026-09-21",
+      "title": "Animal Kingdom",
+      "location": "Island Tower",
+      "parks": ["Disney's Animal Kingdom"],
+      "events": [
+        {
+          "id": "meal-0921-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "Tusker House character breakfast",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "meal-0921-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Yak & Yeti Local Food Cafes",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "nap-0921",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        }
+      ],
+      "lightningLane": [
+        {
+          "attraction": "Expedition Everest - Legend of the Forbidden Mountain",
+          "passType": "multi",
+          "group": null
+        },
+        {
+          "attraction": "Na'vi River Journey",
+          "passType": "multi",
+          "group": null,
+          "priority": "high"
+        },
+        {
+          "attraction": "Kilimanjaro Safaris",
+          "passType": "multi",
+          "group": null,
+          "priority": "high"
+        },
+        {
+          "attraction": "Finding Nemo: The Big Blue... and Beyond!",
+          "passType": "multi",
+          "group": null
+        },
+        { "attraction": "Festival of the Lion King", "passType": "multi", "group": null }
+      ]
+    },
+    {
+      "id": "day-2026-09-22",
+      "date": "2026-09-22",
+      "title": "Resort day",
+      "location": "Island Tower",
+      "parks": [],
+      "events": [
+        {
+          "id": "meal-0922-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "'Ohana character breakfast",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "meal-0922-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Capt. Cook's",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "nap-0922",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        },
+        {
+          "id": "event-grandparents-arrive",
+          "type": "family",
+          "startTime": null,
+          "title": "Mom and Dad arrive at Riviera",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-23",
+      "date": "2026-09-23",
+      "title": "Hollywood Studios + flexible evening",
+      "location": "Island Tower",
+      "parks": ["Disney's Hollywood Studios", "Magic Kingdom or Disney's Animal Kingdom"],
+      "events": [
+        {
+          "id": "meal-0923-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "Topolino's Terrace character breakfast",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "park-0923-hs",
+          "type": "park",
+          "startTime": null,
+          "title": "Hollywood Studios - morning",
+          "status": "planned"
+        },
+        {
+          "id": "meal-0923-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Quick-service lunch",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "nap-0923",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        },
+        {
+          "id": "park-0923-pm",
+          "type": "park",
+          "startTime": null,
+          "title": "Magic Kingdom or Animal Kingdom - evening",
+          "status": "idea"
+        }
+      ],
+      "lightningLane": [
+        { "attraction": "Slinky Dog Dash", "passType": "multi", "group": 1, "priority": "high" },
+        { "attraction": "Toy Story Mania!", "passType": "multi", "group": 2, "priority": "high" },
+        {
+          "attraction": "Millennium Falcon: Smugglers Run",
+          "passType": "multi",
+          "group": 1,
+          "priority": "high"
+        },
+        { "attraction": "The Twilight Zone Tower of Terror", "passType": "multi", "group": 2 }
+      ]
+    },
+    {
+      "id": "day-2026-09-24",
+      "date": "2026-09-24",
+      "title": "EPCOT",
+      "location": "Island Tower",
+      "parks": ["EPCOT"],
+      "events": [
+        {
+          "id": "meal-0924-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "Wailulu breakfast or Capt. Cook's",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "meal-0924-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Space 220 Restaurant",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "diningPlanAccepted": false,
+          "tableServiceCreditsPerPerson": 0
+        },
+        {
+          "id": "nap-0924",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        }
+      ],
+      "lightningLane": [
+        {
+          "attraction": "Guardians of the Galaxy: Cosmic Rewind",
+          "passType": "single",
+          "group": null
+        },
+        { "attraction": "Frozen Ever After", "passType": "multi", "group": 1, "priority": "high" },
+        {
+          "attraction": "Remy's Ratatouille Adventure",
+          "passType": "multi",
+          "group": 1,
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "day-2026-09-25",
+      "date": "2026-09-25",
+      "title": "Magic Kingdom",
+      "location": "Island Tower",
+      "parks": ["Magic Kingdom"],
+      "events": [
+        {
+          "id": "meal-0925-breakfast",
+          "type": "meal",
+          "meal": "breakfast",
+          "startTime": null,
+          "title": "Wailulu breakfast or Capt. Cook's",
+          "status": "planned",
+          "quickServiceCreditsPerPerson": 1
+        },
+        {
+          "id": "meal-0925-lunch",
+          "type": "meal",
+          "meal": "lunch",
+          "startTime": null,
+          "title": "Be Our Guest Restaurant",
+          "status": "planned",
+          "bookingStatus": "needs-booking",
+          "tableServiceCreditsPerPerson": 2
+        },
+        {
+          "id": "nap-0925",
+          "type": "nap",
+          "startTime": null,
+          "title": "Nap at the Polynesian",
+          "status": "planned"
+        }
+      ],
+      "lightningLane": [
+        {
+          "attraction": "Big Thunder Mountain Railroad",
+          "passType": "multi",
+          "group": 1,
+          "priority": "high"
+        },
+        {
+          "attraction": "Seven Dwarfs Mine Train",
+          "passType": "single",
+          "group": null,
+          "priority": "high"
+        },
+        { "attraction": "TRON Lightcycle / Run", "passType": "single", "group": null }
+      ]
+    },
+    {
+      "id": "day-2026-09-26",
+      "date": "2026-09-26",
+      "title": "Checkout + fly home",
+      "location": "Island Tower to MCO",
+      "parks": ["Magic Kingdom"],
+      "events": [
+        {
+          "id": "event-checkout",
+          "type": "lodging",
+          "startTime": null,
+          "title": "Check out in the morning",
+          "status": "planned"
+        },
+        {
+          "id": "park-0926-mk",
+          "type": "park",
+          "startTime": null,
+          "title": "Optional Magic Kingdom morning",
+          "status": "idea"
+        },
+        {
+          "id": "flight-0926",
+          "type": "flight",
+          "startTime": "17:13",
+          "title": "Alaska AS301 departs MCO",
+          "status": "booked"
+        }
+      ],
+      "lightningLane": [
+        { "attraction": "Space Mountain", "passType": "multi", "group": 1 },
+        { "attraction": "TRON Lightcycle / Run", "passType": "single", "group": null }
+      ]
+    }
+  ],
+  "detectedConflicts": [
+    {
+      "id": "conflict-water-park-benefit",
+      "severity": "blocking",
+      "entityId": "event-water-park",
+      "title": "Complimentary water-park benefit is not valid for this check-in date",
+      "reason": "The published 2026 benefit covers check-ins through September 8; this stay begins September 19.",
+      "recommendedAction": "Buy separate admission or replace the water-park block with a resort activity.",
+      "verifiedAt": "2026-07-13",
+      "sourceUrl": "https://disneyworld.disney.go.com/en_CA/guest-services/water-park-disney-resort-benefit/"
+    },
+    {
+      "id": "conflict-space-220-plan",
+      "severity": "warning",
+      "entityId": "meal-0924-lunch",
+      "title": "Space 220 does not accept dining-plan meals",
+      "reason": "The official restaurant page currently marks dining plan meals as not accepted.",
+      "recommendedAction": "Budget this meal out of pocket and keep its dining-plan credit usage at zero.",
+      "verifiedAt": "2026-07-13",
+      "sourceUrl": "https://disneyworld.disney.go.com/en_CA/dining/epcot/space-220/"
+    },
+    {
+      "id": "conflict-epcot-group-one",
+      "severity": "warning",
+      "entityId": "day-2026-09-24",
+      "title": "Frozen and Remy's cannot both be initial first-group Multi Pass selections",
+      "reason": "The initial EPCOT Multi Pass set allows up to one experience from the first group.",
+      "recommendedAction": "Choose one in advance and queue the other for a selection after the first redemption, subject to availability.",
+      "verifiedAt": "2026-07-13",
+      "sourceUrl": "https://disneyworld.disney.go.com/en_CA/lightning-lane-passes/"
+    },
+    {
+      "id": "conflict-hs-four-wishes",
+      "severity": "info",
+      "entityId": "day-2026-09-23",
+      "title": "Hollywood Studios has four desired Multi Pass experiences",
+      "reason": "Only three can be chosen in advance, and the initial group limit still applies.",
+      "recommendedAction": "Pick a valid initial set of three and place the fourth in the rolling-selection queue.",
+      "verifiedAt": "2026-07-13",
+      "sourceUrl": "https://disneyworld.disney.go.com/en_CA/lightning-lane-passes/"
+    },
+    {
+      "id": "conflict-flight-buffer",
+      "severity": "warning",
+      "entityId": "day-2026-09-26",
+      "title": "Checkout-day park time needs an airport buffer",
+      "reason": "The plan includes Magic Kingdom and a 5:13 PM MCO departure without a departure-from-resort time.",
+      "recommendedAction": "Add baggage retrieval, road travel, rental-car or rideshare, security, and airline check-in buffers before confirming park plans."
+    }
+  ]
+}

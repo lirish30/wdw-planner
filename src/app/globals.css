@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-shell: #07103d;
+  --color-shell-elevated: #0d1b5e;
+  --color-on-shell: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f8fafc;
+  --color-accent: #59c3ff;
+  --color-text-primary: #14213d;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-success-surface: #e7f6f0;
+  --color-success: #2e9d78;
+  --color-warning-surface: #fff4d6;
+  --color-warning: #d97706;
+  --color-error-surface: #fdecef;
+  --color-error: #d94c5a;
+  --color-park-magic-kingdom: #79c7ff;
+  --color-park-epcot: #9b8dff;
+  --color-park-hollywood-studios: #e86aa6;
+  --color-park-animal-kingdom: #f59e5b;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --shadow-float: 0 12px 24px rgb(7 16 61 / 0.1), 0 2px 8px rgb(7 16 61 / 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-surface-subtle);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-surface-subtle);
+  color: var(--color-text-primary);
+  font-family: var(--font-nunito-sans), "Nunito Sans", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .app-shell {
+    min-height: 100dvh;
+    background:
+      radial-gradient(circle at 15% 5%, rgb(89 195 255 / 0.2), transparent 25rem),
+      var(--color-surface-subtle);
+  }
+
+  .app-shell__header {
+    background: var(--color-shell);
+    color: var(--color-on-shell);
+  }
+
+  .app-shell__header-inner,
+  .app-shell__main {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+  }
+
+  .app-shell__header-inner {
+    display: flex;
+    min-height: 4.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .app-shell__brand {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-on-shell);
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .app-shell__mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: var(--radius-full);
+    background: var(--color-park-epcot);
+    color: var(--color-shell);
+    font-size: 1rem;
+  }
+
+  .app-shell__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .app-shell__nav-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding-inline: var(--space-sm);
+    border-radius: var(--radius-sm);
+    color: var(--color-on-shell);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .app-shell__nav-link:hover,
+  .app-shell__nav-link[aria-current="page"] {
+    background: rgb(255 255 255 / 0.14);
+  }
+
+  .app-shell__main {
+    padding-block: var(--space-lg) var(--space-2xl);
+  }
+
+  .eyebrow {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.43;
+    text-transform: uppercase;
+  }
+
+  .type-display {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .type-page-heading {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.29;
+  }
+
+  .type-section-heading {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .type-body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .type-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.43;
+  }
+
+  .type-caption {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.33;
+  }
+
+  .specimen-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+
+  .specimen-surface {
+    min-width: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .status-sample {
+    display: grid;
+    gap: var(--space-xs);
+    min-height: 7rem;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  .status-sample--success {
+    background: var(--color-success-surface);
+  }
+
+  .status-sample--warning {
+    background: var(--color-warning-surface);
+  }
+
+  .status-sample--error {
+    background: var(--color-error-surface);
+  }
+
+  .action-pill {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--space-md);
+    border: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-park-epcot);
+    color: var(--color-shell);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.43;
+  }
+
+  .auth-panel {
+    display: grid;
+    width: min(100%, 36rem);
+    gap: var(--space-md);
+    padding: clamp(var(--space-lg), 5vw, var(--space-2xl));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .auth-form {
+    display: grid;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+
+  .auth-form input {
+    min-height: 44px;
+    padding-inline: var(--space-sm);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+  }
+
+  .auth-form button:disabled {
+    opacity: 0.65;
+  }
+}
+
+@media (min-width: 640px) {
+  .app-shell__header-inner,
+  .app-shell__main {
+    width: min(100% - 4rem, 76rem);
+  }
+}

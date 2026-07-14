@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WDW Planner Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-shell: #07103d;
+        --color-shell-elevated: #0d1b5e;
+        --color-on-shell: #ffffff;
+        --color-surface: #ffffff;
+        --color-surface-subtle: #f8fafc;
+        --color-accent: #59c3ff;
+        --color-text-primary: #14213d;
+        --color-text-secondary: #475569;
+        --color-text-muted: #64748b;
+        --color-border: #e2e8f0;
+        --color-border-strong: #cbd5e1;
+        --color-success-surface: #e7f6f0;
+        --color-success: #2e9d78;
+        --color-warning-surface: #fff4d6;
+        --color-warning: #d97706;
+        --color-error-surface: #fdecef;
+        --color-error: #d94c5a;
+        --color-park-magic-kingdom: #79c7ff;
+        --color-park-epcot: #9b8dff;
+        --color-park-hollywood-studios: #e86aa6;
+        --color-park-animal-kingdom: #f59e5b;
+        --type-display-size: 40px;
+        --type-display-weight: 800;
+        --type-display-line: 1.2;
+        --type-heading-page-size: 28px;
+        --type-heading-page-weight: 800;
+        --type-heading-page-line: 1.29;
+        --type-heading-section-size: 20px;
+        --type-heading-section-weight: 700;
+        --type-heading-section-line: 1.4;
+        --type-body-size: 16px;
+        --type-body-weight: 400;
+        --type-body-line: 1.5;
+        --type-label-size: 14px;
+        --type-label-weight: 700;
+        --type-label-line: 1.43;
+        --type-caption-size: 12px;
+        --type-caption-weight: 400;
+        --type-caption-line: 1.33;
+        --rounded-sm: 8px;
+        --rounded-md: 12px;
+        --rounded-lg: 16px;
+        --rounded-xl: 24px;
+        --rounded-full: 999px;
+        --space-2xs: 4px;
+        --space-xs: 8px;
+        --space-sm: 12px;
+        --space-md: 16px;
+        --space-lg: 24px;
+        --space-xl: 32px;
+        --space-2xl: 48px;
+        --shadow-floating: 0 18px 35px rgba(7, 16, 61, 0.1), 0 4px 10px rgba(7, 16, 61, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--color-surface);
+        color: var(--color-text-primary);
+        font-family: "Nunito Sans", sans-serif;
+        font-size: var(--type-body-size);
+        line-height: var(--type-body-line);
+      }
+      header {
+        padding: 64px max(24px, calc((100vw - 1180px) / 2));
+        background: var(--color-shell);
+        color: var(--color-on-shell);
+        background-image:
+          radial-gradient(circle at 12% 25%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.5px),
+          radial-gradient(circle at 75% 42%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px);
+        background-size:
+          90px 90px,
+          130px 130px;
+      }
+      header h1 {
+        font-size: var(--type-display-size);
+        line-height: var(--type-display-line);
+        margin: 0 0 var(--space-sm);
+        letter-spacing: -0.02em;
+      }
+      header p {
+        margin: 0;
+        max-width: 760px;
+        color: #dde7ff;
+      }
+      main {
+        max-width: 1180px;
+        margin: auto;
+        padding: var(--space-2xl) var(--space-lg) 80px;
+      }
+      section {
+        padding: var(--space-xl) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+      h2 {
+        font-size: var(--type-heading-page-size);
+        line-height: var(--type-heading-page-line);
+        margin: 0 0 var(--space-lg);
+      }
+      h3 {
+        font-size: var(--type-heading-section-size);
+        margin: 0 0 var(--space-sm);
+      }
+      .muted {
+        color: var(--color-text-secondary);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: var(--space-md);
+      }
+      .swatch {
+        border: 1px solid var(--color-border);
+        border-radius: var(--rounded-md);
+        overflow: hidden;
+        background: var(--color-surface);
+      }
+      .swatch-color {
+        height: 96px;
+        background: var(--swatch);
+      }
+      .swatch-meta {
+        padding: var(--space-sm);
+      }
+      code {
+        font-size: 12px;
+        color: var(--color-text-secondary);
+      }
+      .type-row {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: var(--space-lg);
+        align-items: baseline;
+        padding: var(--space-md) 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .type-row:last-child {
+        border: 0;
+      }
+      .display {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .heading-page {
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.29;
+      }
+      .heading-section {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .label {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.43;
+      }
+      .caption {
+        font-size: 12px;
+        line-height: 1.33;
+      }
+      .spacing-row,
+      .radius-row {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        margin: var(--space-sm) 0;
+      }
+      .spacing-bar {
+        height: 14px;
+        width: var(--w);
+        background: var(--color-accent);
+        border-radius: var(--rounded-full);
+      }
+      .radius-box {
+        width: 72px;
+        height: 56px;
+        background: var(--color-success-surface);
+        border: 2px solid var(--color-success);
+        border-radius: var(--r);
+      }
+      .elevation-card {
+        width: 320px;
+        padding: var(--space-xl);
+        border-radius: var(--rounded-lg);
+        box-shadow: var(--shadow-floating);
+        background: var(--color-surface);
+      }
+      .component-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--space-lg);
+      }
+      .specimen {
+        padding: var(--space-lg);
+        background: var(--color-surface-subtle);
+        border-radius: var(--rounded-lg);
+      }
+      .specimen-label {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-sm);
+      }
+      .day-tab {
+        width: 132px;
+        height: 96px;
+        padding: 16px;
+        border-radius: 12px;
+        background: var(--color-surface);
+        display: grid;
+        place-content: center;
+        text-align: center;
+        font-weight: 800;
+      }
+      .day-tab.selected {
+        background: var(--color-park-epcot);
+        color: var(--color-on-shell);
+      }
+      .timeline {
+        min-height: 112px;
+        padding: 16px;
+        border-radius: 12px;
+        background: var(--color-success-surface);
+        border-left: 8px solid var(--color-park-epcot);
+      }
+      .timeline small,
+      .alert small,
+      .meter small,
+      .lane small {
+        color: var(--color-text-secondary);
+      }
+      .alert {
+        min-height: 120px;
+        padding: 16px;
+        border-radius: 12px;
+        background: var(--color-warning-surface);
+      }
+      .alert.error {
+        background: var(--color-error-surface);
+      }
+      .meter {
+        width: 320px;
+        max-width: 100%;
+        min-height: 136px;
+        padding: 16px;
+        border-radius: 12px;
+        background: var(--color-success-surface);
+      }
+      .track {
+        height: 8px;
+        background: white;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 12px 0;
+      }
+      .progress {
+        width: 72%;
+        height: 100%;
+        background: var(--color-success);
+      }
+      .lane {
+        min-height: 92px;
+        padding: 16px;
+        border-radius: 12px;
+        background: var(--color-shell-elevated);
+        color: var(--color-on-shell);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .lane small {
+        color: #e6e9ff;
+      }
+      .pill {
+        min-height: 44px;
+        padding: 0 16px;
+        border: 0;
+        border-radius: 999px;
+        background: var(--color-park-epcot);
+        color: white;
+        font: 700 14px "Nunito Sans";
+      }
+      .rules {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+      }
+      .rules > div {
+        padding: var(--space-lg);
+        border-radius: var(--rounded-lg);
+        background: var(--color-surface-subtle);
+      }
+      .rules li {
+        margin: 0 0 var(--space-sm);
+      }
+      @media (max-width: 700px) {
+        header {
+          padding: 40px 20px;
+        }
+        main {
+          padding: 24px 16px;
+        }
+        .type-row {
+          grid-template-columns: 1fr;
+        }
+        .rules {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WDW Planner Design System</h1>
+      <p>
+        A calm, family-first Walt Disney World planning system. This is the human-readable mirror of
+        <code style="color: white">docs/design.md</code>.
+      </p>
+    </header>
+    <main>
+      <section>
+        <h2>Colors</h2>
+        <div class="grid">
+          <div class="swatch" style="--swatch: var(--color-shell)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>shell</b><br /><code>#07103D</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-shell-elevated)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>shell-elevated</b><br /><code>#0D1B5E</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-accent)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>accent</b><br /><code>#59C3FF</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-surface-subtle)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>surface-subtle</b><br /><code>#F8FAFC</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-success)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>success</b><br /><code>#2E9D78</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-warning)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>warning</b><br /><code>#D97706</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-error)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>error</b><br /><code>#D94C5A</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-park-magic-kingdom)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>park-magic-kingdom</b><br /><code>#79C7FF</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-park-epcot)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>park-epcot</b><br /><code>#9B8DFF</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-park-hollywood-studios)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>park-hollywood-studios</b><br /><code>#E86AA6</code></div>
+          </div>
+          <div class="swatch" style="--swatch: var(--color-park-animal-kingdom)">
+            <div class="swatch-color"></div>
+            <div class="swatch-meta"><b>park-animal-kingdom</b><br /><code>#F59E5B</code></div>
+          </div>
+        </div>
+        <p class="muted">
+          Light planning surfaces do the reading work; dark shell surfaces and park colors create
+          destination context. Semantic color is always paired with text.
+        </p>
+      </section>
+      <section>
+        <h2>Typography</h2>
+        <div class="type-row">
+          <code>display · 40/48 · 800</code>
+          <div class="display">The magic is in the plan.</div>
+        </div>
+        <div class="type-row">
+          <code>heading-page · 28/36 · 800</code>
+          <div class="heading-page">A calm EPCOT day</div>
+        </div>
+        <div class="type-row">
+          <code>heading-section · 20/28 · 700</code>
+          <div class="heading-section">Today’s schedule</div>
+        </div>
+        <div class="type-row">
+          <code>body · 16/24 · 400</code>
+          <div>Early entry, a midday resort nap, and dinner near World Showcase.</div>
+        </div>
+        <div class="type-row">
+          <code>label · 14/20 · 700</code>
+          <div class="label">CONFIRMED · GROUP 1</div>
+        </div>
+        <div class="type-row">
+          <code>caption · 12/16 · 400</code>
+          <div class="caption">Last verified July 13, 2026</div>
+        </div>
+      </section>
+      <section>
+        <h2>Spacing</h2>
+        <div id="spacing"></div>
+      </section>
+      <section>
+        <h2>Radius</h2>
+        <div id="radius"></div>
+      </section>
+      <section>
+        <h2>Elevation &amp; Depth</h2>
+        <div class="elevation-card">
+          <h3>Floating</h3>
+          <p class="muted">
+            Reserved for menus, dragged itinerary items, and true overlays. Routine planning rows
+            stay flat.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2>Components</h2>
+        <div class="component-grid">
+          <div class="specimen">
+            <div class="specimen-label">day-tab / day-tab-selected</div>
+            <div style="display: flex; gap: 12px">
+              <div class="day-tab">SEP 20<br /><small>Magic Kingdom</small></div>
+              <div class="day-tab selected">SEP 21<br /><small>EPCOT</small></div>
+            </div>
+          </div>
+          <div class="specimen">
+            <div class="specimen-label">timeline-event-confirmed</div>
+            <div class="timeline">
+              <b>9:25 AM · Remy’s Ratatouille Adventure</b><br /><small
+                >Lightning Lane Multi Pass · Group 1</small
+              >
+            </div>
+          </div>
+          <div class="specimen">
+            <div class="specimen-label">planning-alert-warning / planning-alert-error</div>
+            <div class="alert">
+              <b>Water park check-in perk</b><br /><small
+                >Your check-in is outside the published eligibility dates.</small
+              >
+            </div>
+            <div class="alert error" style="margin-top: 12px">
+              <b>Initial-selection conflict</b><br /><small
+                >Frozen and Remy are both Group 1.</small
+              >
+            </div>
+          </div>
+          <div class="specimen">
+            <div class="specimen-label">dining-credit-meter</div>
+            <div class="meter">
+              <b>5 of 7 quick-service credits remaining</b>
+              <div class="track"><div class="progress"></div></div>
+              <small>Two credits are allocated</small>
+            </div>
+          </div>
+          <div class="specimen">
+            <div class="specimen-label">lightning-lane-row-selected</div>
+            <div class="lane">
+              <span><b>Remy’s Ratatouille Adventure</b><br /><small>EPCOT · Multi Pass</small></span
+              ><b>9:25 AM</b>
+            </div>
+          </div>
+          <div class="specimen">
+            <div class="specimen-label">action-pill</div>
+            <button class="pill">+ Add plan item</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Do’s and Don’ts</h2>
+        <div class="rules">
+          <div>
+            <h3>✓ Do</h3>
+            <ul>
+              <li>Keep the selected day and next action obvious.</li>
+              <li>Preserve imported family language and choices.</li>
+              <li>Pair every status color with explicit text.</li>
+              <li>Design for one-handed, outdoor mobile use.</li>
+              <li>Show applicability dates for changing rules.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>✗ Don’t</h3>
+            <ul>
+              <li>Recreate the CSV as a scrolling grid.</li>
+              <li>Turn every fact into a bordered card.</li>
+              <li>Add decorative SVG animation or novelty type.</li>
+              <li>Imply booking capability or guaranteed availability.</li>
+              <li>Hide naps, buffers, or subgroup notes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const spacing = {
+        "2xs": "4px",
+        xs: "8px",
+        sm: "12px",
+        md: "16px",
+        lg: "24px",
+        xl: "32px",
+        "2xl": "48px",
+      };
+      document.querySelector("#spacing").innerHTML = Object.entries(spacing)
+        .map(
+          ([k, v]) =>
+            `<div class="spacing-row"><code>${k} · ${v}</code><div class="spacing-bar" style="--w:${parseInt(v) * 4}px"></div></div>`,
+        )
+        .join("");
+      const radius = { sm: "8px", md: "12px", lg: "16px", xl: "24px", full: "999px" };
+      document.querySelector("#radius").innerHTML = Object.entries(radius)
+        .map(
+          ([k, v]) =>
+            `<div class="radius-row"><code>${k} · ${v}</code><div class="radius-box" style="--r:${v}"></div></div>`,
+        )
+        .join("");
+    </script>
+  </body>
+</html>
