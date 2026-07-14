@@ -1,0 +1,1 @@
+import type {z} from "zod";import type {normalizedTripSchema} from "@/lib/validation/trip";export type NormalizedTrip=z.infer<typeof normalizedTripSchema>;export type ImportPreview={trip:NormalizedTrip;warnings:unknown[];sourceReferences:Record<string,{path:string;sourceText?:string}>;counts:{days:number;stays:number;flights:number;meals:number;lightningLaneWishes:number}};
