@@ -1,0 +1,1 @@
+import {z} from "zod";export const importFileSchema=z.object({fileName:z.string().min(1),fileType:z.enum(["csv","json"]),size:z.number().int().positive().max(2*1024*1024),payload:z.string().min(1)});export const importCommitSchema=z.object({tripName:z.string().trim().min(1).max(120).optional(),corrections:z.record(z.string(),z.unknown()).default({})});

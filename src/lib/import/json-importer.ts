@@ -1,0 +1,1 @@
+import {normalizedTripSchema} from "@/lib/validation/trip";import {previewTrip} from "@/lib/import/normalize";export function importCanonicalJson(payload:string|unknown){return previewTrip(normalizedTripSchema.parse(typeof payload==="string"?JSON.parse(payload):payload));}
