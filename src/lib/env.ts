@@ -25,7 +25,7 @@ function formatIssues(issues: z.core.$ZodIssue[]) {
 }
 
 export function getClientEnv() {
-  const parsed = clientSchema.safeParse({
+  return parseClientEnv({
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -33,6 +33,10 @@ export function getClientEnv() {
     NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
     NEXT_PUBLIC_ANALYTICS_ENABLED: process.env.NEXT_PUBLIC_ANALYTICS_ENABLED,
   });
+}
+
+export function parseClientEnv(input: unknown) {
+  const parsed = clientSchema.safeParse(input);
   if (!parsed.success)
     throw new Error(`Invalid public environment: ${formatIssues(parsed.error.issues)}`);
   return parsed.data;
